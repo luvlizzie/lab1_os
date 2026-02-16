@@ -1,17 +1,15 @@
-//
-//  employee.h
-//  lab1_os
-//
+k#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
 
-#ifndef employee_h
-#define employee_h
+#include <cstring>
+#include <string>
 
-#pragma pack(push, 1)
-struct employee {
-    int num;
-    char name[10];
-    double hours;
+static constexpr int MAX_NAME_LENGTH = 10;
+
+struct Employee {
+    int num;          
+    char name[MAX_NAME_LENGTH];
+    double hours;     
 };
-#pragma pack(pop)
 
-#endif /* employee_h */
+#endif

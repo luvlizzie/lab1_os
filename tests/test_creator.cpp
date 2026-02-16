@@ -5,10 +5,19 @@
 #include <vector>
 #include <set>
 #include <cstdio>
-#include "../src/employee.h"
+#include "../include/employee.h"
 
-using namespace testing;
-using namespace std;
+using ::testing::HasSubstr;
+using std::string;
+using std::ifstream;
+using std::ofstream;
+using std::vector;
+using std::set;
+using std::ios;
+
+static constexpr int TEST_EMPLOYEES_COUNT = 3;
+static constexpr int MULTIPLE_EMPLOYEES_COUNT = 5;
+static constexpr int SINGLE_EMPLOYEE = 1;
 
 class CreatorTest : public ::testing::Test {
 protected:
@@ -20,13 +29,13 @@ protected:
         system("rm -rf test_data");
     }
     
-    vector<employee> readBinaryFile(const string& filename) {
-        vector<employee> employees;
+    vector<Employee> readBinaryFile(const string& filename) {
+        vector<Employee> employees;
         ifstream file(filename, ios::binary);
         if (!file.is_open()) return employees;
         
-        employee emp;
-        while (file.read(reinterpret_cast<char*>(&emp), sizeof(employee))) {
+        Employee emp;
+        while (file.read(reinterpret_cast<char*>(&emp), sizeof(Employee))) {
             employees.push_back(emp);
         }
         return employees;
@@ -35,9 +44,9 @@ protected:
 
 TEST_F(CreatorTest, CreatesBinaryFile) {
     string filename = "test_data/employees.bin";
-    int count = 3;
+    int count = TEST_EMPLOYEES_COUNT;
     
-    string cmd = "./Creator.exe " + filename + " " + to_string(count);
+    string cmd = "./Creator.exe " + filename + " " + std::to_string(count);
     int result = system(cmd.c_str());
     
     EXPECT_EQ(result, 0);
@@ -48,9 +57,9 @@ TEST_F(CreatorTest, CreatesBinaryFile) {
 
 TEST_F(CreatorTest, WritesCorrectEmployeeData) {
     string filename = "test_data/employees.bin";
-    int count = 1;
+    int count = SINGLE_EMPLOYEE;
     
-    string cmd = "./Creator.exe " + filename + " " + to_string(count);
+    string cmd = "./Creator.exe " + filename + " " + std::to_string(count);
     system(cmd.c_str());
     
     auto employees = readBinaryFile(filename);
@@ -67,9 +76,9 @@ TEST_F(CreatorTest, WritesCorrectEmployeeData) {
 
 TEST_F(CreatorTest, CreatesMultipleEmployees) {
     string filename = "test_data/employees.bin";
-    int count = 5;
+    int count = MULTIPLE_EMPLOYEES_COUNT;
     
-    string cmd = "./Creator.exe " + filename + " " + to_string(count);
+    string cmd = "./Creator.exe " + filename + " " + std::to_string(count);
     system(cmd.c_str());
     
     auto employees = readBinaryFile(filename);
