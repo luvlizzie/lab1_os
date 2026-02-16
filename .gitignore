@@ -3,12 +3,16 @@
 xcuserdata/
 *.xcworkspace/
 DerivedData/
-/lab1_os.xcodeproj/
 
 # Build files
 *.exe
 *.bin
-*.txt
+
+# Test reports (конкретные файлы)
+allure-report/
+test_results.xml
+report.txt
+test_*.txt
 
 # macOS
 .DS_Store
@@ -16,7 +20,3 @@ DerivedData/
 # Build directories
 build/
 cmake-build-*/
-
-# Test reports
-allure-report/
-test_results.xml
