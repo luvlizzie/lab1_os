@@ -2,14 +2,14 @@
 //  Reporter.cpp
 //  lab1_os
 //
-//  Created by Елизавета on 16.02.26.
-//
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include "employee.h"
+
 using namespace std;
 
 bool compareEmployees(const employee& a, const employee& b) {
@@ -49,8 +49,9 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    outFile << "Отчет по файлу \"" << binaryFile << "\"" << endl;
-    outFile << "Номер сотрудника, имя сотрудника, часы, зарплата" << endl;
+    // ВСЁ НА АНГЛИЙСКОМ!
+    outFile << "Report for file: " << binaryFile << endl;
+    outFile << "ID, Name, Hours, Salary" << endl;
 
     for (const auto& e : employees) {
         double salary = e.hours * hourlyRate;

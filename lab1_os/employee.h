@@ -2,7 +2,6 @@
 //  employee.h
 //  lab1_os
 //
-//  Created by Елизавета on 16.02.26.
 
 #ifndef employee_h
 #define employee_h

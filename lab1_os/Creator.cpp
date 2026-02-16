@@ -2,12 +2,12 @@
 //  Creator.cpp
 //  lab1_os
 //
-//  Created by Елизавета on 16.02.26.
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include "employee.h"
+
 using namespace std;
 
 int main(int argc, char* argv[]) {

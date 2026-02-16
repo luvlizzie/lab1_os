@@ -1,1 +1,13 @@
-lab1_os.xcodeproj/xcshareddata/
+# Xcode
+*.xcodeproj/
+xcuserdata/
+*.xcworkspace/
+DerivedData/
+
+# Build files
+*.exe
+*.bin
+*.txt
+
+# macOS
+.DS_Store

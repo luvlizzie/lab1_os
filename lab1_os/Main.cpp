@@ -2,13 +2,13 @@
 //  Main.cpp
 //  lab1_os
 //
-//  Created by Елизавета on 16.02.26.
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <windows.h>
 #include "employee.h"
+
 using namespace std;
 
 void displayBinaryFile(const string& filename) {
@@ -19,7 +19,7 @@ void displayBinaryFile(const string& filename) {
     }
 
     employee emp;
-    cout << "\nContents of binary file:" << endl;
+    cout << "\nBinary file contents:" << endl;
     cout << "ID\tName\tHours" << endl;
     cout << "----------------------" << endl;
     
@@ -108,4 +108,3 @@ int main() {
     
     return 0;
 }
-
