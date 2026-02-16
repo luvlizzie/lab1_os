@@ -3,6 +3,7 @@
 xcuserdata/
 *.xcworkspace/
 DerivedData/
+/lab1_os.xcodeproj/
 
 # Build files
 *.exe
