@@ -12,3 +12,11 @@ DerivedData/
 
 # macOS
 .DS_Store
+
+# Build directories
+build/
+cmake-build-*/
+
+# Test reports
+allure-report/
+test_results.xml

@@ -4,17 +4,18 @@ TARGETS = Main.exe Creator.exe Reporter.exe
 
 all: $(TARGETS)
 
-Main.exe: lab1_os/Main.cpp lab1_os/employee.h
-	$(CXX) $(CXXFLAGS) lab1_os/Main.cpp -o Main.exe
+Main.exe: src/Main.cpp src/employee.h
+	$(CXX) $(CXXFLAGS) src/Main.cpp -o Main.exe
 
-Creator.exe: lab1_os/Creator.cpp lab1_os/employee.h
-	$(CXX) $(CXXFLAGS) lab1_os/Creator.cpp -o Creator.exe
+Creator.exe: src/Creator.cpp src/employee.h
+	$(CXX) $(CXXFLAGS) src/Creator.cpp -o Creator.exe
 
-Reporter.exe: lab1_os/Reporter.cpp lab1_os/employee.h
-	$(CXX) $(CXXFLAGS) lab1_os/Reporter.cpp -o Reporter.exe
+Reporter.exe: src/Reporter.cpp src/employee.h
+	$(CXX) $(CXXFLAGS) src/Reporter.cpp -o Reporter.exe
 
 clean:
 	rm -f *.exe *.bin *.txt
+	rm -rf build/ allure-report/
 
 run: all
 	wine Main.exe
