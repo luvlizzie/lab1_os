@@ -5,9 +5,10 @@
 #include <memory>
 #include <iomanip>
 #include <stdexcept>
-#include "../include/employee.h"
+#include "employee.h"
 
 using std::cout;
+using std::cin;
 using std::cerr;
 using std::endl;
 using std::string;

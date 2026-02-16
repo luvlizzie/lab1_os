@@ -5,7 +5,7 @@
 #include <vector>
 #include <set>
 #include <cstdio>
-#include "../include/employee.h"
+#include "../src/employee.h"
 
 using ::testing::HasSubstr;
 using std::string;

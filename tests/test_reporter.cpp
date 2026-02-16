@@ -5,7 +5,7 @@
 #include <sstream>
 #include <cstdio>
 #include <cstring>
-#include "../include/employee.h"
+#include "../src/employee.h"
 
 using ::testing::HasSubstr;
 using std::string;

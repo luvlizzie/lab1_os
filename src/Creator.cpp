@@ -3,7 +3,7 @@
 #include <string>
 #include <memory>
 #include <stdexcept>
-#include "../include/employee.h"
+#include "employee.h"
 
 using std::cout;
 using std::cin;

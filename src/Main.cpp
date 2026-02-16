@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <stdexcept>
+#include "employee.h"
 
 #ifdef _WIN32
 #include <windows.h>

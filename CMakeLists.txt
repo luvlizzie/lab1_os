@@ -4,13 +4,9 @@ project(EmployeeRecordsSystem)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(Creator.exe src/Creator.cpp)
-add_executable(Reporter.exe src/Reporter.cpp)
-add_executable(Main.exe src/Main.cpp)
-
-target_include_directories(Creator.exe PRIVATE ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(Reporter.exe PRIVATE ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(Main.exe PRIVATE ${CMAKE_SOURCE_DIR}/include)
+add_executable(Creator.exe src/Creator.cpp src/employee.h)
+add_executable(Reporter.exe src/Reporter.cpp src/employee.h)
+add_executable(Main.exe src/Main.cpp src/employee.h)
 
 if (MINGW)
     set_target_properties(Creator.exe PROPERTIES SUFFIX "")
@@ -34,6 +30,7 @@ add_executable(test_runner
     tests/test_runner.cpp
     tests/test_creator.cpp 
     tests/test_reporter.cpp
+    src/employee.h
 )
 
 target_link_libraries(test_runner 
@@ -43,7 +40,7 @@ target_link_libraries(test_runner
 )
 
 target_include_directories(test_runner PRIVATE 
-    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src
 )
 
 add_custom_command(TARGET test_runner POST_BUILD
